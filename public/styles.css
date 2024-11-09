@@ -1,0 +1,43 @@
+body {
+    font-family: "Roboto", serif;
+}
+
+h1 {
+    text-align: center;
+    border: solid;
+    padding: 1%;
+    color: white;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #ffffff;
+    margin: 1%;
+    border: solid 1px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    margin: 5%;
+}
+
+img {
+    width: 180px;
+    height: 180px;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+    z-index: -1;
+}

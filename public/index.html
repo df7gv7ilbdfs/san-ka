@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAN-KA Online Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f7d8b1, #fcb8c0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .header {
+            font-size: 2.5rem;
+            color: #f77a52;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subheader {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .feature-item {
+            background: #fdf7f3;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            color: #f77a52;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .cta {
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            background: #f77a52;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f95a2a;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="header">SAN-KA Online Store</h1>
+    <p class="subheader">Your go-to place for exclusive items and unbeatable deals!</p>
+
+    <div class="features">
+        <div class="feature-item">
+            <h3 class="feature-title">✨ Curated Collections</h3>
+            <p class="feature-description">Handpicked items that match your unique style and taste. Every product is selected for quality and uniqueness.</p>
+        </div>
+        <div class="feature-item">
+            <h3 class="feature-title">🚚 Fast Shipping</h3>
+            <p class="feature-description">Get your orders delivered swiftly to your door. We offer worldwide shipping options for maximum convenience.</p>
+        </div>
+        <div class="feature-item">
+            <h3 class="feature-title">💳 Secure Payment</h3>
+            <p class="feature-description">Shop with peace of mind with our top-notch security measures and trusted payment gateways.</p>
+        </div>
+        <div class="feature-item">
+            <h3 class="feature-title">🛠 24/7 Support</h3>
+            <p class="feature-description">Our dedicated support team is here to assist you any time, any day. We're just a message away!</p>
+        </div>
+    </div>
+
+    <div class="cta">
+        <button class="cta-button">Start Shopping Now</button>
+    </div>
+
+    <div class="footer">
+        © 2024 SAN-KA Online Store. All rights reserved.
+    </div>
+</div>
+</body>
+</html>
