@@ -1,44 +1,174 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-          rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .products-area {
+            padding: 0 25%;
+
+            h1 {
+                text-align: center;
+                background-color: #00ffea;
+                padding: 2%;
+                border-radius: 8px;
+            }
+
+            > div {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2.5%;
+
+                .product {
+                    padding: 0 5% 5%;
+                    background-color: white;
+                    border-radius: 8px;
+
+                    .product-image-container {
+                        width: 100%;
+                        padding-top: 100%;
+                        position: relative;
+                        overflow: hidden;
+
+                        border-radius: 8px;
+
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    button {
+                        background-color: black;
+                        color: white;
+                        width: 100%;
+                        padding: 3% 0;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+
+                    button:hover {
+                        background-color: #27ae60;
+                    }
+                }
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<h1>store name</h1>
-
-<div class="product-grid">
-
-    <div class="product-card">
-
-        <img src="">
-
-        <div class="product-info">
-            <h2>name</h2>
-            <p>price</p>
-        </div>
-
-    </div>
-
+<nav>
+    <button>🛒 Check Out</button>
+</nav>
+<div class="products-area">
+    <h1>Products</h1>
+    <div></div>
 </div>
-
-<video autoplay muted loop playsinline>
-    <source src="/videos/banner.mp4" type="video/mp4">
+<video autoplay muted loop playsinline class="background-video">
+    <source src="https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/videos/background.mp4" type="video/mp4">
 </video>
-
 <script>
     function parse(data) {
-        console.log(data);
+        data = [
+            {
+                name: "LEGO 1 DAY",
+                price: 1.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/1.jpg"
+            },
+            {
+                name: "LEGO 7 DAY",
+                price: 5.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/2.png"
+            },
+            {
+                name: "LEGO 30 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/3.png"
+            },
+            {
+                name: "LEGO 60 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/3.png"
+            },
+            {
+                name: "LEGO 90 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/avatars/lego.jpg"
+            },
+            {
+                name: "LEGO 90 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/avatars/lego.jpg"
+            },
+            {
+                name: "LEGO 90 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/avatars/lego.jpg"
+            },
+            {
+                name: "LEGO 90 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/avatars/lego.jpg"
+            },
+            {
+                name: "LEGO 90 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/avatars/lego.jpg"
+            },
+            {
+                name: "LEGO 90 DAY",
+                price: 15.99,
+                image: "https://stf-downloads.s3.us-east-1.amazonaws.com/public/san-ka/images/avatars/lego.jpg"
+            }
+        ];
+
+        const products_container = document.querySelector(".products-area > div");
+
+        data.forEach(product => {
+            const product_element = document.createElement("div");
+            product_element.className = "product";
+            product_element.innerHTML = `
+                <h2>${product.name}</h2>
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="lego">
+                </div>
+                <h3>${product.price}$</h3>
+                <button>Add to Cart</button>
+            `;
+
+            console.log(product);
+
+            products_container.appendChild(product_element);
+        });
     }
 
     fetch("/api/store/" + window.location.pathname.split('/').pop())
@@ -46,7 +176,5 @@
         .then(data => parse(data))
         .catch(error => console.error('Error fetching data:', error));
 </script>
-
 </body>
-
 </html>
